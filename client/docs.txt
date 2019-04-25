@@ -1,0 +1,2 @@
+1. connect schema to VS code plugin
+2. setup apollo-client (client)
