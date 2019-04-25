@@ -1,0 +1,3 @@
+ - generate key (on apollo engine)
+ - npx apollo service:push --endpoint=http://localhost:4000
+ - npx apollo service:check --endpoint=http://localhost:4000
