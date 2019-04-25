@@ -1,3 +1,8 @@
+push schema to apollo engine
  - generate key (on apollo engine)
  - npx apollo service:push --endpoint=http://localhost:4000
  - npx apollo service:check --endpoint=http://localhost:4000
+
+deploy on now (server)
+ - create now.json => settings
+ - npx now
