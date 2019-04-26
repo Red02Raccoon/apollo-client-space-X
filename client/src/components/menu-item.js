@@ -1,6 +1,7 @@
 import styled, { css } from 'react-emotion';
 import { Link } from '@reach/router';
-import { colors, unit } from '../styles';
+
+import { colors, unit } from '../styles/global';
 
 export const menuItemClassName = css({
   flexGrow: 1,

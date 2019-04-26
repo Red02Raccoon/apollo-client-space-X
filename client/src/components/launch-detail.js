@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import { unit } from '../styles';
+import { unit } from '../styles/global';
 import { cardClassName, getBackgroundImage } from './launch-tile';
 
 const LaunchDetail = ({ id, site, rocket }) => (

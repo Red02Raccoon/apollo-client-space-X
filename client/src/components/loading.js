@@ -1,8 +1,9 @@
 import styled, { keyframes } from 'react-emotion';
 import { size } from 'polished';
 
+import { colors } from '../styles/global';
+
 import { ReactComponent as Logo } from '../assets/logo.svg';
-import { colors } from '../styles';
 
 const spin = keyframes`
   to {

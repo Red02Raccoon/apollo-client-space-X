@@ -2,10 +2,11 @@ import React from 'react';
 import styled, { css } from 'react-emotion';
 import { Link } from '@reach/router';
 
+import { unit } from '../styles/global';
+
 import galaxy from '../assets/images/galaxy.jpg';
 import iss from '../assets/images/iss.jpg';
 import moon from '../assets/images/moon.jpg';
-import { unit } from '../styles';
 
 const backgrounds = [galaxy, iss, moon];
 export function getBackgroundImage(id) {
