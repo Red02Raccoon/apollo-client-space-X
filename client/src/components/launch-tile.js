@@ -27,10 +27,6 @@ export default ({ launch }) => {
   );
 };
 
-/**
- * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
- */
-
 export const cardClassName = css({
   padding: `${unit * 4}px ${unit * 5}px`,
   borderRadius: 7,

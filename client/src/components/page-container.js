@@ -12,10 +12,6 @@ export default function PageContainer(props) {
   );
 }
 
-/**
- * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
- */
-
 const Bar = styled('div')({
   flexShrink: 0,
   height: 12,

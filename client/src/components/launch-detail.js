@@ -17,10 +17,6 @@ const LaunchDetail = ({ id, site, rocket }) => (
   </Card>
 );
 
-/**
- * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
- */
-
 const Card = styled('div')(cardClassName, {
   height: 365,
   marginBottom: unit * 4,

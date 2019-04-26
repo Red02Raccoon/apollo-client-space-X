@@ -47,10 +47,6 @@ export default class LoginForm extends Component {
   }
 }
 
-/**
- * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
- */
-
 const Container = styled('div')({
   display: 'flex',
   flexDirection: 'column',

@@ -7,8 +7,8 @@ import dog1 from '../assets/images/dog-1.png';
 import dog2 from '../assets/images/dog-2.png';
 import dog3 from '../assets/images/dog-3.png';
 
-const max = 25; // 25 letters in the alphabet
-const offset = 97; // letter A's charcode is 97
+const max = 25; 
+const offset = 97;
 const avatars = [dog1, dog2, dog3];
 const maxIndex = avatars.length - 1;
 function pickAvatarByEmail(email) {
@@ -30,10 +30,6 @@ export default function Header({ image, children = 'Space Explorer' }) {
     </Container>
   );
 }
-
-/**
- * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
- */
 
 const Container = styled('div')({
   display: 'flex',

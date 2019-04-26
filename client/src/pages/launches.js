@@ -6,6 +6,7 @@ import { LaunchTile, Header, Button, Loading } from '../components';
 
 export const LAUNCH_TILE_DATA = gql`
   fragment LaunchTile on Launch {
+    __typename
     id
     isBooked
     rocket {
@@ -19,8 +20,8 @@ export const LAUNCH_TILE_DATA = gql`
   }
 `;
 
-const GET_LAUNCHES = gql`
-  query launchList($after: String) {
+export const GET_LAUNCHES = gql`
+  query GetLaunchList($after: String) {
     launches(after: $after) {
       cursor
       hasMore
@@ -45,42 +46,38 @@ export default function Launches() {
             {data.launches &&
               data.launches.launches &&
               data.launches.launches.map(launch => (
-                <LaunchTile
-                  key={launch.id}
-                  launch={launch}
-                />
+                <LaunchTile key={launch.id} launch={launch} />
               ))}
-              {data.launches &&
-                data.launches.hasMore && (
-                    <Button
-                      onClick={() =>
-                        fetchMore({
-                          variables: {
-                            after: data.launches.cursor,
+            {data.launches &&
+              data.launches.hasMore && (
+                <Button
+                  onClick={() =>
+                    fetchMore({
+                      variables: {
+                        after: data.launches.cursor,
+                      },
+                      updateQuery: (prev, { fetchMoreResult, ...rest }) => {
+                        if (!fetchMoreResult) return prev;
+                        return {
+                          ...fetchMoreResult,
+                          launches: {
+                            ...fetchMoreResult.launches,
+                            launches: [
+                              ...prev.launches.launches,
+                              ...fetchMoreResult.launches.launches,
+                            ],
                           },
-                          updateQuery: (prev, { fetchMoreResult, ...rest }) => {
-                            if (!fetchMoreResult) return prev;
-                            return {
-                              ...fetchMoreResult,
-                              launches: {
-                                ...fetchMoreResult.launches,
-                                launches: [
-                                  ...prev.launches.launches,
-                                  ...fetchMoreResult.launches.launches,
-                                ],
-                              },
-                            };
-                          },
-                        })
-                      }
-                    >
-                      Load More
-                    </Button>
-                  )
-              }
+                        };
+                      },
+                    })
+                  }
+                >
+                  Load More
+                </Button>
+              )}
           </Fragment>
         );
       }}
     </Query>
   );
-};
+}

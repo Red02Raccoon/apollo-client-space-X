@@ -30,10 +30,6 @@ export default function Footer() {
   );
 }
 
-/**
- * STYLED COMPONENTS USED IN THIS FILE ARE BELOW HERE
- */
-
 const Container = styled('footer')({
   flexShrink: 0,
   marginTop: 'auto',
