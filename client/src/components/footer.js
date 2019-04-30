@@ -10,22 +10,28 @@ import { ReactComponent as HomeIcon } from '../assets/icons/home.svg';
 import { ReactComponent as CartIcon } from '../assets/icons/cart.svg';
 import { ReactComponent as ProfileIcon } from '../assets/icons/profile.svg';
 
+const menu = [{
+    title: 'Home',
+    path: '/',
+    icon: <HomeIcon/>,
+  },
+  {
+    title: 'Cart',
+    path: '/cart',
+    icon: <CartIcon/>,
+  },
+  {
+    title: 'Profile',
+    path: '/profile',
+    icon: <ProfileIcon/>,
+  }
+]
+
 export default function Footer() {
   return (
     <Container>
       <InnerContainer>
-        <MenuItem to="/">
-          <HomeIcon />
-          Home
-        </MenuItem>
-        <MenuItem to="/cart">
-          <CartIcon />
-          Cart
-        </MenuItem>
-        <MenuItem to="/profile">
-          <ProfileIcon />
-          Profile
-        </MenuItem>
+        {menu.map((item, index) =>  <MenuItem to={item.path} key={index}>{item.icon}{item.title}</MenuItem>)}
         <LogoutButton />
       </InnerContainer>
     </Container>
